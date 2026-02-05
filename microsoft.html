@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Amrutiya - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            --primary-blue: #0078d4;
+            --text-dark: #1b1b1b;
+            --text-light: #505050;
+            
+            --skill-blue: #0078d4;
+            --skill-green: #107c10;
+            --skill-purple: #5c2d91;
+            --skill-orange: #d83b01;
+            --skill-dark: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 10px;
+            -webkit-print-color-adjust: exact;
+        }
+
+        /* --- PDF Download Button --- */
+        .download-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background 0.2s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            background: #005a9e;
+        }
+
+        /* --- Main Resume Container --- */
+        .resume-paper {
+            width: 100%;
+            max-width: 900px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+        }
+
+        /* --- Header Section --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(0,0,0,0.05);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 65%;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .windows-logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+        }
+
+        .name-role h1 {
+            font-size: 26px;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+            font-weight: 700;
+        }
+
+        .name-role p {
+            font-size: 14px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .name-role .location {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        /* --- SOCIAL ICONS --- */
+        .social-icons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .social-btn {
+            width: 32px;
+            height: 32px;
+            background: #2c3e50;
+            color: white !important;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .social-btn:hover { background: var(--primary-blue); transform: translateY(-2px); }
+        .social-btn i { font-size: 14px; }
+
+        /* --- APP DOCK --- */
+        .app-dock {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: flex;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+
+        .app-dock img {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.2s;
+            object-fit: contain;
+        }
+        .app-dock img:hover { transform: scale(1.2); }
+
+        /* --- Layout Grid --- */
+        .content-body {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 20px;
+        }
+
+        /* --- Left Column: Experience --- */
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .team-icon-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+            object-fit: contain;
+        }
+
+        .section-title-text {
+            font-size: 26px;
+            font-weight: 800;
+            color: #2b303b;
+            letter-spacing: -0.5px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 15px;
+            border-left: 2px solid #d1d9e6;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            border: 1px solid rgba(255,255,255,0.8);
+            page-break-inside: avoid;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-blue);
+            border: 2px solid #f0f2f5;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .job-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .timeline-logo {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        .job-info h3 { font-size: 15px; color: var(--text-dark); margin-bottom: 1px; font-weight: 700;}
+        .job-info span { font-size: 11px; color: var(--text-light); font-weight: 600; text-transform: uppercase;}
+
+        .job-desc { list-style: none; }
+
+        .job-desc li {
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 18px;
+            line-height: 1.3;
+        }
+
+        .job-desc li::before {
+            content: '\f00c';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+            font-size: 10px;
+            top: 2px;
+        }
+
+        /* --- Right Column --- */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 14px;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            page-break-inside: avoid;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .skill-group h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tag.blue { background: var(--skill-blue); }
+        .tag.green { background: var(--skill-green); }
+        .tag.purple { background: var(--skill-purple); }
+        .tag.orange { background: var(--skill-orange); }
+        .tag.dark { background: var(--skill-dark); }
+
+        .edu-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .edu-icon {
+            font-size: 18px;
+            color: #0078d4;
+            margin-right: 10px;
+        }
+
+        .edu-info h4 { font-size: 13px; margin-bottom: 1px; font-weight: 700; }
+        .edu-info p { font-size: 11px; color: var(--text-light); }
+        .edu-info span { font-size: 10px; color: #777; font-weight: 600; }
+
+        /* Print Override */
+        @media print {
+            body { background: white; padding: 0; }
+            .resume-paper { 
+                box-shadow: none; 
+                border: none; 
+                max-width: 100%; 
+                padding: 10px;
+                background: white;
+            }
+            .download-btn { display: none; }
+            .glass-card, .timeline-item, .header-left { 
+                background: #fcfcfc;
+                border: 1px solid #eee;
+                box-shadow: none;
+            }
+            .timeline-item, .glass-card { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="download-btn" onclick="generatePDF()">
+        <i class="fa-solid fa-download"></i> Download PDF
+    </button>
+
+    <div class="resume-paper" id="resume-content">
+        
+        <header>
+            <div class="header-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="windows-logo">
+                <div class="name-role">
+                    <h1>Raj Amrutiya</h1>
+                    <p>Web Developer</p>
+                    <span class="location"><i class="fa-solid fa-location-dot"></i> Anjar, Kutch | +91 98989 52006 | rajmarutiya2006@gmail.com</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="social-icons">
+                    <a href="mailto:rajmarutiya2006@gmail.com" class="social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-btn" title="Portfolio"><i class="fa-solid fa-globe"></i></a>
+                </div>
+                <div class="app-dock">
+                    <img src="Outlook.png" alt="Outlook">
+                    <img src="Word.png" alt="Word">
+                    <img src="Excel.png" alt="Excel">
+                    <img src="PowerPoint.png" alt="PowerPoint">
+                </div>
+            </div>
+        </header>
+
+        <div class="content-body">
+            
+            <section class="left-col">
+                <div class="section-header">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg" alt="Experience" class="team-icon-img">
+                    <span class="section-title-text">Experience</span>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="job-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="timeline-logo">
+                            <div class="job-info">
+                                <h3>Student Developer @ CS Dept</h3>
+                                <span>2025 - Present | Academic & Personal Projects</span>
+                            </div>
+                        </div>
+                        <ul class="job-desc">
+                            <li>Developed multiple full-stack web applications using HTML, CSS, JavaScript, PHP, and MySQL.</li>
+                            <li>Created Android apps with Java and Firebase for user registration, login, and data storage.</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="timeline-item">
+                        <div class="job-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="timeline-logo">
+                            <div class="job-info">
+                                <h3>Multi-Service Booking Platform</h3>
+                                <span>"Book Any" Platform</span>
+                            </div>
+                        </div>
+                        <ul class="job-desc">
+                            <li>Supports train, bus, hotel, taxi, bike rental, and tour bookings.</li>
+                            <li>Integrated secure user authentication and payment functionality with PHP & MySQL.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="job-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="timeline-logo">
+                            <div class="job-info">
+                                <h3>E-commerce Shopping Cart</h3>
+                                <span>PHP & MySQL System</span>
+                            </div>
+                        </div>
+                        <ul class="job-desc">
+                            <li>Designed cart allowing users to add/update products and view prices.</li>
+                            <li>Integrated front-end (HTML/CSS/JS) seamlessly with backend (PHP).</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="right-column">
+                
+                <div class="glass-card">
+                    <h2 style="margin-bottom: 12px; font-size: 18px; color: var(--text-dark); display:flex; align-items:center;">
+                        <i class="fa-solid fa-code" style="margin-right:10px; color: var(--primary-blue);"></i> Skills
+                    </h2>
+                    
+                    <div class="skills-container">
+                        <div class="skill-group">
+                            <h4>Languages & Core</h4>
+                            <div class="tags">
+                                <span class="tag blue">HTML & CSS</span>
+                                <span class="tag blue">JavaScript</span>
+                                <span class="tag blue">PHP</span>
+                                <span class="tag blue">Java</span>
+                                <span class="tag blue">C++</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Web & Databases</h4>
+                            <div class="tags">
+                                <span class="tag green">Responsive Design</span>
+                                <span class="tag green">MySQL</span>
+                                <span class="tag green">Firebase</span>
+                                <span class="tag green">Bootstrap</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Tools & Frameworks</h4>
+                            <div class="tags">
+                                <span class="tag purple">Git & GitHub</span>
+                                <span class="tag purple">Google Maps API</span>
+                                <span class="tag purple">jQuery / AJAX</span>
+                                <span class="tag purple">VS Code</span>
+                                <span class="tag purple">IntelliJ IDEA</span>
+                                <span class="tag purple">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <h2 style="margin-bottom: 12px; font-size: 18px; color: var(--text-dark); display:flex; align-items:center;">
+                         <i class="fa-solid fa-user-graduate" style="margin-right:10px; color: var(--primary-blue);"></i> Education
+                    </h2>
+                    
+                    <div class="edu-card" style="border-left-color: #5c2d91;">
+                        <i class="fa-solid fa-graduation-cap edu-icon" style="color: #5c2d91;"></i>
+                        <div class="edu-info">
+                            <h4>B.Tech Computer Science</h4>
+                            <p>Ganpat University</p>
+                            <span>Present</span>
+                        </div>
+                    </div>
+
+                    <div class="edu-card">
+                        <i class="fa-solid fa-university edu-icon"></i>
+                        <div class="edu-info">
+                            <h4>Diploma in Computer Science</h4>
+                            <p>Marwadi University</p>
+                            <span>2022 - 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('resume-content');
+            const opt = {
+                margin:       0,
+                filename:     'Raj_Amrutiya_Resume_OnePage.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            // Remove transparency for cleaner print
+            element.style.background = "#f0f5f9"; 
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Revert style
+                element.style.background = "var(--glass-bg)";
+            });
+        }
+    </script>
+</body>
+</html>
