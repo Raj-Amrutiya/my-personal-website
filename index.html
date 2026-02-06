@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raj Amrutiya - Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
             --glass-bg: rgba(255, 255, 255, 0.85);
@@ -15,7 +17,7 @@
             --primary-blue: #0078d4;
             --text-dark: #1b1b1b;
             --text-light: #505050;
-            
+
             --skill-blue: #0078d4;
             --skill-green: #107c10;
             --skill-purple: #5c2d91;
@@ -91,7 +93,7 @@
             justify-content: space-between;
             align-items: center;
             padding-bottom: 15px;
-            border-bottom: 2px solid rgba(0,0,0,0.05);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.05);
         }
 
         .header-left {
@@ -100,9 +102,9 @@
             background: rgba(255, 255, 255, 0.5);
             padding: 10px 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             width: 65%;
-            border: 1px solid rgba(255,255,255,0.8);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
 
         .windows-logo {
@@ -123,7 +125,7 @@
             color: var(--primary-blue);
             font-weight: 600;
         }
-        
+
         .name-role .location {
             font-size: 12px;
             color: #666;
@@ -155,11 +157,17 @@
             align-items: center;
             text-decoration: none;
             transition: all 0.2s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .social-btn:hover { background: var(--primary-blue); transform: translateY(-2px); }
-        .social-btn i { font-size: 14px; }
+        .social-btn:hover {
+            background: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .social-btn i {
+            font-size: 14px;
+        }
 
         /* --- APP DOCK --- */
         .app-dock {
@@ -168,7 +176,7 @@
             border-radius: 20px;
             display: flex;
             gap: 10px;
-            border: 1px solid rgba(255,255,255,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .app-dock img {
@@ -177,7 +185,10 @@
             transition: transform 0.2s;
             object-fit: contain;
         }
-        .app-dock img:hover { transform: scale(1.2); }
+
+        .app-dock img:hover {
+            transform: scale(1.2);
+        }
 
         /* --- Layout Grid --- */
         .content-body {
@@ -187,7 +198,7 @@
         }
 
         /* --- Left Column: Experience --- */
-        
+
         .section-header {
             display: flex;
             align-items: center;
@@ -220,8 +231,8 @@
             background: rgba(255, 255, 255, 0.6);
             padding: 15px;
             border-radius: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.8);
             page-break-inside: avoid;
         }
 
@@ -251,10 +262,23 @@
             object-fit: contain;
         }
 
-        .job-info h3 { font-size: 15px; color: var(--text-dark); margin-bottom: 1px; font-weight: 700;}
-        .job-info span { font-size: 11px; color: var(--text-light); font-weight: 600; text-transform: uppercase;}
+        .job-info h3 {
+            font-size: 15px;
+            color: var(--text-dark);
+            margin-bottom: 1px;
+            font-weight: 700;
+        }
 
-        .job-desc { list-style: none; }
+        .job-info span {
+            font-size: 11px;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .job-desc {
+            list-style: none;
+        }
 
         .job-desc li {
             font-size: 12px;
@@ -287,8 +311,8 @@
             background: rgba(255, 255, 255, 0.6);
             border-radius: 14px;
             padding: 15px;
-            border: 1px solid rgba(255,255,255,0.8);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
             page-break-inside: avoid;
         }
 
@@ -319,14 +343,28 @@
             font-size: 11px;
             font-weight: 600;
             color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .tag.blue { background: var(--skill-blue); }
-        .tag.green { background: var(--skill-green); }
-        .tag.purple { background: var(--skill-purple); }
-        .tag.orange { background: var(--skill-orange); }
-        .tag.dark { background: var(--skill-dark); }
+        .tag.blue {
+            background: var(--skill-blue);
+        }
+
+        .tag.green {
+            background: var(--skill-green);
+        }
+
+        .tag.purple {
+            background: var(--skill-purple);
+        }
+
+        .tag.orange {
+            background: var(--skill-orange);
+        }
+
+        .tag.dark {
+            background: var(--skill-dark);
+        }
 
         .edu-card {
             display: flex;
@@ -335,7 +373,7 @@
             padding: 10px;
             border-radius: 8px;
             margin-top: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
             border-left: 4px solid var(--primary-blue);
         }
 
@@ -345,30 +383,58 @@
             margin-right: 10px;
         }
 
-        .edu-info h4 { font-size: 13px; margin-bottom: 1px; font-weight: 700; }
-        .edu-info p { font-size: 11px; color: var(--text-light); }
-        .edu-info span { font-size: 10px; color: #777; font-weight: 600; }
+        .edu-info h4 {
+            font-size: 13px;
+            margin-bottom: 1px;
+            font-weight: 700;
+        }
+
+        .edu-info p {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        .edu-info span {
+            font-size: 10px;
+            color: #777;
+            font-weight: 600;
+        }
 
         /* Print Override */
         @media print {
-            body { background: white; padding: 0; }
-            .resume-paper { 
-                box-shadow: none; 
-                border: none; 
-                max-width: 100%; 
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-paper {
+                box-shadow: none;
+                border: none;
+                max-width: 100%;
                 padding: 10px;
                 background: white;
             }
-            .download-btn { display: none; }
-            .glass-card, .timeline-item, .header-left { 
+
+            .download-btn {
+                display: none;
+            }
+
+            .glass-card,
+            .timeline-item,
+            .header-left {
                 background: #fcfcfc;
                 border: 1px solid #eee;
                 box-shadow: none;
             }
-            .timeline-item, .glass-card { break-inside: avoid; }
+
+            .timeline-item,
+            .glass-card {
+                break-inside: avoid;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <button class="download-btn" onclick="generatePDF()">
@@ -376,20 +442,23 @@
     </button>
 
     <div class="resume-paper" id="resume-content">
-        
+
         <header>
             <div class="header-left">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="windows-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft"
+                    class="windows-logo">
                 <div class="name-role">
                     <h1>Raj Amrutiya</h1>
                     <p>Web Developer</p>
-                    <span class="location"><i class="fa-solid fa-location-dot"></i> Anjar, Kutch | +91 98989 52006 | rajmarutiya2006@gmail.com</span>
+                    <span class="location"><i class="fa-solid fa-location-dot"></i> Anjar, Kutch | +91 98989 52006 |
+                        rajmarutiya2006@gmail.com</span>
                 </div>
             </div>
-            
+
             <div class="header-right">
                 <div class="social-icons">
-                    <a href="mailto:rajmarutiya2006@gmail.com" class="social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="mailto:rajmarutiya2006@gmail.com" class="social-btn" title="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
                     <a href="#" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="#" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="social-btn" title="Portfolio"><i class="fa-solid fa-globe"></i></a>
@@ -404,7 +473,7 @@
         </header>
 
         <div class="content-body">
-            
+
             <section class="left-col">
                 <div class="section-header">
                     <img src="msteam.svg" alt="Experience" class="team-icon-img">
@@ -414,21 +483,25 @@
                 <div class="timeline">
                     <article class="timeline-item">
                         <div class="job-header">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="timeline-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                                alt="Microsoft" class="timeline-logo">
                             <div class="job-info">
                                 <h3>Student Developer @ CS Dept</h3>
                                 <span>2025 - Present | Academic & Personal Projects</span>
                             </div>
                         </div>
                         <ul class="job-desc">
-                            <li>Developed multiple full-stack web applications using HTML, CSS, JavaScript, PHP, and MySQL.</li>
-                            <li>Created Android apps with Java and Firebase for user registration, login, and data storage.</li>
+                            <li>Developed multiple full-stack web applications using HTML, CSS, JavaScript, PHP, and
+                                MySQL.</li>
+                            <li>Created Android apps with Java and Firebase for user registration, login, and data
+                                storage.</li>
                         </ul>
                     </article>
-                    
+
                     <article class="timeline-item">
                         <div class="job-header">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="timeline-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                                alt="Microsoft" class="timeline-logo">
                             <div class="job-info">
                                 <h3>Multi-Service Booking Platform</h3>
                                 <span>"Book Any" Platform</span>
@@ -439,11 +512,33 @@
                             <li>Integrated secure user authentication and payment functionality with PHP & MySQL.</li>
                         </ul>
                     </article>
-                    
 
                     <article class="timeline-item">
                         <div class="job-header">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="timeline-logo">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" alt="Vaultify"
+                                class="timeline-logo">
+                            <div class="job-info">
+                                <h3>Secure Credential Vault System</h3>
+                                <span>"Vaultify" Project</span>
+                            </div>
+                        </div>
+                        <ul class="job-desc">
+                            <li>Developed a CLI-based secure vault for storing and managing encrypted credentials.</li>
+                            <li>Implemented AES-256-GCM and RSA-2048 for data encryption and key management.</li>
+                            <li>Designed a tamper-evident audit ledger to detect unauthorized access and modifications.
+                            </li>
+                            <li>Built using Java, Gradle, and PostgreSQL with cross-platform launcher support.</li>
+                            <li>Source Code: <a href="https://github.com/Raj-Amrutiya/Vaultify" target="_blank">GitHub
+                                    Repository</a></li>
+                        </ul>
+                    </article>
+
+
+
+                    <article class="timeline-item">
+                        <div class="job-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                                alt="Microsoft" class="timeline-logo">
                             <div class="job-info">
                                 <h3>E-commerce Shopping Cart</h3>
                                 <span>PHP & MySQL System</span>
@@ -458,12 +553,13 @@
             </section>
 
             <section class="right-column">
-                
+
                 <div class="glass-card">
-                    <h2 style="margin-bottom: 12px; font-size: 18px; color: var(--text-dark); display:flex; align-items:center;">
+                    <h2
+                        style="margin-bottom: 12px; font-size: 18px; color: var(--text-dark); display:flex; align-items:center;">
                         <i class="fa-solid fa-code" style="margin-right:10px; color: var(--primary-blue);"></i> Skills
                     </h2>
-                    
+
                     <div class="skills-container">
                         <div class="skill-group">
                             <h4>Languages & Core</h4>
@@ -501,10 +597,12 @@
                 </div>
 
                 <div class="glass-card">
-                    <h2 style="margin-bottom: 12px; font-size: 18px; color: var(--text-dark); display:flex; align-items:center;">
-                         <i class="fa-solid fa-user-graduate" style="margin-right:10px; color: var(--primary-blue);"></i> Education
+                    <h2
+                        style="margin-bottom: 12px; font-size: 18px; color: var(--text-dark); display:flex; align-items:center;">
+                        <i class="fa-solid fa-user-graduate" style="margin-right:10px; color: var(--primary-blue);"></i>
+                        Education
                     </h2>
-                    
+
                     <div class="edu-card" style="border-left-color: #5c2d91;">
                         <i class="fa-solid fa-graduation-cap edu-icon" style="color: #5c2d91;"></i>
                         <div class="edu-info">
@@ -533,16 +631,16 @@
         function generatePDF() {
             const element = document.getElementById('resume-content');
             const opt = {
-                margin:       0,
-                filename:     'Raj_Amrutiya_Resume_OnePage.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true },
-                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+                margin: 0,
+                filename: 'Raj_Amrutiya_Resume_OnePage.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
             };
 
             // Remove transparency for cleaner print
-            element.style.background = "#f0f5f9"; 
-            
+            element.style.background = "#f0f5f9";
+
             html2pdf().set(opt).from(element).save().then(() => {
                 // Revert style
                 element.style.background = "var(--glass-bg)";
@@ -550,4 +648,5 @@
         }
     </script>
 </body>
+
 </html>
