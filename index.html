@@ -568,6 +568,7 @@
                                 <span class="tag blue">PHP</span>
                                 <span class="tag blue">Java</span>
                                 <span class="tag blue">C++</span>
+                                <span class="tag blue">Python</span>
                             </div>
                         </div>
 
@@ -588,6 +589,9 @@
                                 <span class="tag purple">VS Code</span>
                                 <span class="tag purple">IntelliJ IDEA</span>
                                 <span class="tag purple">Docker</span>
+                                <span class="tag purple">Canva</span>
+                                <span class="tag purple">Figma</span>
+                                <span class="tag purple">Gradle</span>
                             </div>
                         </div>
                     </div>
@@ -599,7 +603,6 @@
                         <i class="fa-solid fa-user-graduate" style="margin-right:10px; color: var(--primary-blue);"></i>
                         Education
                     </h2>
-
                     <div class="edu-card" style="border-left-color: #5c2d91;">
                         <i class="fa-solid fa-graduation-cap edu-icon" style="color: #5c2d91;"></i>
                         <div class="edu-info">
@@ -645,11 +648,10 @@
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
             };
 
-            // Remove transparency for cleaner print
             element.style.background = "#f0f5f9";
 
             html2pdf().set(opt).from(element).save().then(() => {
-                // Revert style
+
                 element.style.background = "var(--glass-bg)";
             });
         }
